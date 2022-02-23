@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import waits.WaitForElement;
 
 public class LoginPage {
     @FindBy(name = "username")
@@ -24,23 +25,28 @@ public class LoginPage {
     }
 
     public void setUserName(String userName) {
+        WaitForElement.waitUntilElementIsVisible(userNameField);
         userNameField.sendKeys(userName);
     }
 
     public void setPassword(String password) {
+        WaitForElement.waitUntilElementIsVisible(passwordField);
         passwordField.clear();
         passwordField.sendKeys(password);
     }
 
     public void clickButtonLogin() {
+        WaitForElement.waitUntilElementIsClickable(buttonLogIn);
         buttonLogIn.click();
     }
 
     public String woringMessage() {
+        WaitForElement.waitUntilElementIsVisible(wrongText);
         String warningText = wrongText.getText();
         return warningText;
     }
     public void clickOnFishImageButton() {
+        WaitForElement.waitUntilElementIsClickable(btnFishImage);
         btnFishImage.click();
     }
 }

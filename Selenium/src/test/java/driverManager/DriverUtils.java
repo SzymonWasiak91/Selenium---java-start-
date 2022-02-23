@@ -6,7 +6,7 @@ public class DriverUtils {
 
 
     public static void setInitialConfiguration(){
-        DriverManager.getWebdriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        DriverManager.getWebdriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         DriverManager.getWebdriver().manage().window().maximize();
     }
     public static void navigateToPage(String pageUrl){

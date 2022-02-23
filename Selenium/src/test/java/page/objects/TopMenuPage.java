@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import waits.WaitForElement;
 
 public class TopMenuPage {
 
@@ -16,6 +17,7 @@ public class TopMenuPage {
     }
 
     public void singInLink() {
+        WaitForElement.waitUntilElementIsClickable(singLink);
         singLink.click();
     }
 }
