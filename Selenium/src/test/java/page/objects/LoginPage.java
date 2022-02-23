@@ -14,6 +14,8 @@ public class LoginPage {
     private WebElement buttonLogIn;
     @FindBy(xpath = "//*[@id='Content']/ul/li")
     private WebElement wrongText;
+    @FindBy(css = "area[alt='Fish']")
+    private WebElement btnFishImage;
     WebDriver driver;
 
     public LoginPage(WebDriver driver) {
@@ -37,5 +39,8 @@ public class LoginPage {
     public String woringMessage() {
         String warningText = wrongText.getText();
         return warningText;
+    }
+    public void clickOnFishImageButton() {
+        btnFishImage.click();
     }
 }
