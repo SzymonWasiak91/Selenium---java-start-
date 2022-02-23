@@ -1,5 +1,6 @@
 package page.objects;
 
+import driverManager.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,11 +17,10 @@ public class LoginPage {
     private WebElement wrongText;
     @FindBy(css = "area[alt='Fish']")
     private WebElement btnFishImage;
-    WebDriver driver;
 
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+
+    public LoginPage() {
+        PageFactory.initElements(DriverManager.getWebdriver(), this);
     }
 
     public void setUserName(String userName) {

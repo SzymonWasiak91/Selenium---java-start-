@@ -1,5 +1,6 @@
 package page.objects;
 
+import driverManager.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,11 +10,8 @@ public class ShoppingCartPage {
     @FindBy(css = "a[href$='newOrderForm=']")
     private WebElement proceedToCheckoutButton;
 
-    private WebDriver driver;
-
-    public ShoppingCartPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public ShoppingCartPage() {
+        PageFactory.initElements(DriverManager.getWebdriver(), this);
     }
 
     public void clickOnProceedToCheckout() {

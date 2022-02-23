@@ -11,18 +11,18 @@ public class CorrectLoginTest extends BaseTest {
 
     @Test
     public void asUserLoginUsingValidLoginAndPassword(){
-        LandingPage landingPage = new LandingPage(driver);
+        LandingPage landingPage = new LandingPage();
         landingPage.clickOnEnterStoreLink();
 
-        TopMenuPage topMenuPage = new TopMenuPage(driver);
+        TopMenuPage topMenuPage = new TopMenuPage();
         topMenuPage.singInLink();
 
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage();
         loginPage.setUserName("j2ee");
         loginPage.setPassword("j2ee");
         loginPage.clickButtonLogin();
 
-        FooterPage footerPage = new FooterPage(driver);
+        FooterPage footerPage = new FooterPage();
         assertTrue(footerPage.isBannerIsDisplayed());
     }
 
