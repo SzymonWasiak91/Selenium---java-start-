@@ -1,6 +1,7 @@
 package tests;
 
 import driverManager.DriverManager;
+import driverManager.DriverUtils;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -8,14 +9,15 @@ import org.testng.annotations.BeforeMethod;
 import java.time.Duration;
 
 public class BaseTest {
-   private WebDriver driver;
+
+
+
     @BeforeMethod
     public void beforeTest() {
+        DriverManager.getWebdriver();
+        DriverUtils.setInitialConfiguration();
+        DriverUtils.navigateToPage("http://przyklady.javastart.pl/jpetstore/");
 
-        driver = DriverManager.getWebdriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        driver.get("http://przyklady.javastart.pl/jpetstore/");
     }
 
     @AfterMethod
