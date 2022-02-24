@@ -1,6 +1,8 @@
 package page.objects;
 
 import driverManager.DriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,13 +12,15 @@ import waits.WaitForElement;
 public class ShoppingCartPage {
     @FindBy(css = "a[href$='newOrderForm=']")
     private WebElement proceedToCheckoutButton;
-
+    private Logger logger = LogManager.getRootLogger();
     public ShoppingCartPage() {
         PageFactory.initElements(DriverManager.getWebdriver(), this);
     }
 
     public void clickOnProceedToCheckout() {
+        logger.info("Trying click to checkout button");
         WaitForElement.waitUntilElementIsClickable(proceedToCheckoutButton);
         proceedToCheckoutButton.click();
+        logger.info("Done to click checkout button");
     }
 }
