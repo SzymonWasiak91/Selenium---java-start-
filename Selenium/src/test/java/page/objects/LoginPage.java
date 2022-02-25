@@ -26,26 +26,29 @@ public class LoginPage {
         PageFactory.initElements(DriverManager.getWebdriver(), this);
     }
 
-    public void setUserName(String userName) {
+    public LoginPage setUserName(String userName) {
         logger.info("Wait for user name filed");
         WaitForElement.waitUntilElementIsVisible(userNameField);
         userNameField.sendKeys(userName);
-        logger.info("User field is full");
+        logger.info("User field is full " + userName);
+        return this;
     }
 
-    public void setPassword(String password) {
+    public LoginPage setPassword(String password) {
         logger.info("Wait for password filed");
         WaitForElement.waitUntilElementIsVisible(passwordField);
         passwordField.clear();
         passwordField.sendKeys(password);
-        logger.info("Password field is full");
+        logger.info("Password field is full " + password);
+        return  this;
     }
 
-    public void clickButtonLogin() {
+    public FooterPage clickButtonLogin() {
         logger.info("After clicking button loggin");
         WaitForElement.waitUntilElementIsClickable(buttonLogIn);
         buttonLogIn.click();
         logger.info("After clicking button loggin");
+        return new FooterPage();
     }
 
     public String woringMessage() {
@@ -55,10 +58,11 @@ public class LoginPage {
         logger.info("Worning message view");
         return warningText;
     }
-    public void clickOnFishImageButton() {
+    public LoginPage clickOnFishImageButton() {
         logger.info("Trying to click finish button");
         WaitForElement.waitUntilElementIsClickable(btnFishImage);
         btnFishImage.click();
         logger.info("Clicked on finish button");
+        return this;
     }
 }

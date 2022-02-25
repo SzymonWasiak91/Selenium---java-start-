@@ -11,7 +11,7 @@ public class E2eTest extends BaseTest{
     @Test
     public void gotToTheCardE2eTest(){
         LandingPage landingPage = new LandingPage();
-        landingPage.clickOnEnterStoreLink();
+            landingPage.clickOnEnterStoreLink();
 
         LoginPage loginPage = new LoginPage();
         loginPage.clickOnFishImageButton();

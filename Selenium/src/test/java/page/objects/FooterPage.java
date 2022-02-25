@@ -21,7 +21,7 @@ public class FooterPage {
         logger.info("Wait for visible footer banner");
         WaitForElement.waitUntilElementIsVisible(footerBanner);
        Boolean isDisplayed = footerBanner.isDisplayed();
-        logger.info("Footer banner is visible");
+        logger.info("Footer banner is visible " ,isDisplayed);
        return  isDisplayed;
 
 
