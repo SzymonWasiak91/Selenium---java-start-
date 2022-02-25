@@ -1,9 +1,11 @@
 package tests;
 
+import driverManager.DriverUtils;
 import org.testng.annotations.Test;
 import page.objects.LandingPage;
 import page.objects.LoginPage;
 
+import static navigation.ApplicationURLs.LOGIN_URL;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class FailedLoginTest extends BaseTest {
@@ -12,6 +14,7 @@ public class FailedLoginTest extends BaseTest {
 
     @Test
     public void asUserTryToLogInWithIncorrectLoginAndPassword() {
+        DriverUtils.navigateToPage(LOGIN_URL);
         LandingPage landingPage = new LandingPage();
         landingPage.clickOnEnterStoreLink()
                     .singInLink()

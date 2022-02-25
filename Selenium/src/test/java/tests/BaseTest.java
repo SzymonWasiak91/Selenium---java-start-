@@ -2,6 +2,7 @@ package tests;
 
 import driverManager.DriverManager;
 import driverManager.DriverUtils;
+import navigation.ApplicationURLs;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -16,7 +17,7 @@ public class BaseTest {
     public void beforeTest() {
         DriverManager.getWebdriver();
         DriverUtils.setInitialConfiguration();
-        DriverUtils.navigateToPage("http://przyklady.javastart.pl/jpetstore/");
+        DriverUtils.navigateToPage(ApplicationURLs.APLICATION_URI);
 
     }
 
