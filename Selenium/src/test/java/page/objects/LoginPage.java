@@ -58,11 +58,11 @@ public class LoginPage {
         logger.info("Worning message view");
         return warningText;
     }
-    public LoginPage clickOnFishImageButton() {
+    public FishListPage clickOnFishImageButton() {
         logger.info("Trying to click finish button");
         WaitForElement.waitUntilElementIsClickable(btnFishImage);
         btnFishImage.click();
         logger.info("Clicked on finish button");
-        return this;
+        return new FishListPage();
     }
 }
