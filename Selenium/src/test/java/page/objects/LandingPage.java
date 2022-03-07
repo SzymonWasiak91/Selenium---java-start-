@@ -14,7 +14,7 @@ public class LandingPage {
     private WebElement enterStoreLink;
     private Logger logger = LogManager.getRootLogger();
     public LandingPage() {
-        PageFactory.initElements(DriverManager.getWebdriver(), this);
+        PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
     public TopMenuPage clickOnEnterStoreLink() {

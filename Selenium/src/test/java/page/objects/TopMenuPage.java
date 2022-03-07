@@ -15,7 +15,7 @@ public class TopMenuPage {
     private WebElement singLink;
     private Logger logger = LogManager.getRootLogger();
     public TopMenuPage() {
-        PageFactory.initElements(DriverManager.getWebdriver(), this);
+        PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
     public LoginPage singInLink() {

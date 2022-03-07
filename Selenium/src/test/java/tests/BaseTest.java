@@ -24,7 +24,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void beforeTest() {
-        DriverManager.getWebdriver();
+        DriverManager.getWebDriver();
         DriverUtils.setInitialConfiguration();
         DriverUtils.navigateToPage(ApplicationURLs.APLICATION_URI);
 

@@ -1,9 +1,7 @@
 package page.objects;
-
 import driverManager.DriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,7 +12,7 @@ public class ShoppingCartPage {
     private WebElement proceedToCheckoutButton;
     private Logger logger = LogManager.getRootLogger();
     public ShoppingCartPage() {
-        PageFactory.initElements(DriverManager.getWebdriver(), this);
+        PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
     public void clickOnProceedToCheckout() {

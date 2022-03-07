@@ -11,7 +11,7 @@ public class WaitForElement {
 
 
     public static WebDriverWait getWebdriverWait(){
-        return new WebDriverWait(DriverManager.getWebdriver(), Duration.ofSeconds(10));
+        return new WebDriverWait(DriverManager.getWebDriver(), Duration.ofSeconds(10));
     }
     public static void waitUntilElementIsClickable(WebElement element){
         WebDriverWait webDriverWait = getWebdriverWait();

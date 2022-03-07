@@ -15,7 +15,7 @@ public class AngelFishListPage {
     private Logger logger = LogManager.getRootLogger();
 
     public AngelFishListPage() {
-        PageFactory.initElements(DriverManager.getWebdriver(), this);
+        PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
     public ShoppingCartPage clickOnAddToCartSmallAngelfish() {

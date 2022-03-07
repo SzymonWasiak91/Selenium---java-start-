@@ -15,7 +15,7 @@ public class FooterPage {
     private Logger logger = LogManager.getRootLogger();
 
     public FooterPage(){
-        PageFactory.initElements(DriverManager.getWebdriver(),this);
+        PageFactory.initElements(DriverManager.getWebDriver(),this);
     }
     public Boolean isBannerIsDisplayed(){
         logger.info("Wait for visible footer banner");

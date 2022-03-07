@@ -13,5 +13,10 @@
             <class name="tests.CorrectLoginTest"/>
         </classes>
     </test>
-
+    
+    <test name="E2E add to card">
+        <classes>
+            <class name="tests.E2eTest"></class>
+        </classes>
+    </test>
 </suite>

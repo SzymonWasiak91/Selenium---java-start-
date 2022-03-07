@@ -23,7 +23,7 @@ public class LoginPage {
     private Logger logger = LogManager.getRootLogger();
 
     public LoginPage() {
-        PageFactory.initElements(DriverManager.getWebdriver(), this);
+        PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
     public LoginPage setUserName(String userName) {
