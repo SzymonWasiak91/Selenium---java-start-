@@ -2,13 +2,12 @@ package tests;
 
 import configuration.ConfigurationProperties;
 import configuration.PropertiesLoader;
+import driverManager.BrowserType;
 import driverManager.DriverManager;
 import driverManager.DriverUtils;
 import navigation.ApplicationURLs;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 import java.util.Properties;
@@ -21,9 +20,10 @@ public class BaseTest {
         Properties propertiesFromFile = propertiesLoader.getPropertiesFromFile("configuration.properties");
         ConfigurationProperties.setProperties(propertiesFromFile);
     }
-
+    @Parameters("browser")
     @BeforeMethod
-    public void beforeTest() {
+    public void beforeTest(@Optional BrowserType browserType) {
+        DriverManager.setWebDriver(browserType);
         DriverManager.getWebDriver();
         DriverUtils.setInitialConfiguration();
         DriverUtils.navigateToPage(ApplicationURLs.APLICATION_URI);

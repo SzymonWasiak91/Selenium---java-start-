@@ -3,18 +3,21 @@
 <suite name="All Pet Store Tests" parallel="tests" thread-count="3">
 
     <test name="Negative Login Tests">
+        <parameter name="browser" value="CHROME"></parameter>
         <classes>
             <class name="tests.FailedLoginTest"/>
         </classes>
     </test>
 
     <test name="Positive Login Tests">
+        <parameter name="browser" value="OPERA"></parameter>
         <classes>
             <class name="tests.CorrectLoginTest"/>
         </classes>
     </test>
     
     <test name="E2E add to card">
+        <parameter name="browser" value="EDGE"></parameter>
         <classes>
             <class name="tests.E2eTest"></class>
         </classes>
